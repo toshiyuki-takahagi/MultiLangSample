@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Content.PM;
 using Android.Content.Res;
 using Android.OS;
+using Android.Telephony;
 using MultiLangSample.Platforms.Android;
 
 namespace MultiLangSample;
@@ -16,7 +17,27 @@ public partial class MainActivity : MauiAppCompatActivity
 {
     protected override void OnCreate(Bundle? savedInstanceState)
     {
+        //var localeManager = GetSystemService(LocaleService) as LocaleManager;
+        //if( localeManager != null)
+        //{
+        //    var locales = localeManager.ApplicationLocales;
+        //    if(locales == null || locales.IsEmpty)
+        //    {
+        //        locales = localeManager.SystemLocales;
+        //    }
+        //    if( locales != null && !locales.IsEmpty)
+        //    {
+        //        int count = locales.Size();
+        //        for( int index = 0; index < count; index++)
+        //        {
+        //            var locale = locales.Get(index);
+        //            System.Diagnostics.Debug.WriteLine(locale);
+        //        }
+        //    }
+        //}
         System.Diagnostics.Debug.WriteLine("Called OnCreate()");
+        System.Diagnostics.Debug.WriteLine($"CultureInfo.CurrentCulture={System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag})");
+        System.Diagnostics.Debug.WriteLine($"CultureInfo.CurrentUICulture={System.Globalization.CultureInfo.CurrentUICulture.IetfLanguageTag})");
         base.OnCreate(savedInstanceState);
         // Localeの変更は2種類ある
         RegisterReceiver(new TraceChangedReceiver(ChangeActionTarget.SystemLangauage), new IntentFilter(Android.Content.Intent.ActionLocaleChanged));
