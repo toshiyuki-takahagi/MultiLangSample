@@ -8,7 +8,6 @@ using MultiLangSample.Platforms.Android;
 namespace MultiLangSample;
 
 [Activity(
-    Label = "@string/app_name",
     Theme = "@style/Maui.SplashTheme",
     MainLauncher = true,
     LaunchMode = LaunchMode.SingleTop,
