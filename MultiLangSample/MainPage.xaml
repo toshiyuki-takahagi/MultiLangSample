@@ -4,7 +4,7 @@
              xmlns:properties="clr-namespace:MultiLang.Resources.Properties;assembly=MultiLang.Resources"
              x:Class="MultiLangSample.MainPage">
 
-    <ScrollView>
+    <ScrollView Margin="0,16">
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
