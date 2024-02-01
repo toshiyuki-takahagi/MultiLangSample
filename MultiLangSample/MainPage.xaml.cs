@@ -52,13 +52,21 @@ public partial class MainPage : ContentPage
 
     private void Picker_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if (sender is Picker picker)
+        //if (sender is Picker picker)
+        //{
+        //    // インデックスで区別できるのでそのままキャストしてセットアップする
+        //    if( Application.Current != null)
+        //    {
+        //        Application.Current.UserAppTheme = (AppTheme)picker.SelectedIndex;
+        //    }
+        //}
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        if( Application.Current != null)
         {
-            // インデックスで区別できるのでそのままキャストしてセットアップする
-            if( Application.Current != null)
-            {
-                Application.Current.UserAppTheme = (AppTheme)picker.SelectedIndex;
-            }
+            Application.Current.UserAppTheme = (AppTheme)ColorPicker.SelectedIndex;
         }
     }
 }

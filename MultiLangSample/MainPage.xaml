@@ -39,10 +39,10 @@
                     <x:String>Dark</x:String>
                 </Picker.Items>
             </Picker>
-            <!--<Button Text="{x:Static properties:Resources.MainPage_ButtonFace_ExchgResource}"
+            <Button Text="{x:Static properties:Resources.MainPage_ButtonFace_ExchgResource}"
                     SemanticProperties.Hint="Change the display language"
                     Clicked="Button_Clicked"
-                    HorizontalOptions="Fill" />-->
+                    HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
 
