@@ -66,7 +66,14 @@ public partial class MainPage : ContentPage
     {
         if( Application.Current != null)
         {
-            Application.Current.UserAppTheme = (AppTheme)ColorPicker.SelectedIndex;
+            var appTheme = (AppTheme)ColorPicker.SelectedIndex;
+            // 現在のテーマ設定がシステムと同じでデフォルトに戻す場合は一度色を強制的に切り替える必要があるっぽい
+            if (appTheme == AppTheme.Unspecified && Application.Current.UserAppTheme == Application.Current.RequestedTheme)
+            {
+                // 一度システムと異なるモードにしてやらないとiOSはうまくいかないっぽい
+                Application.Current.UserAppTheme = Application.Current.RequestedTheme == AppTheme.Light ? AppTheme.Dark : AppTheme.Light;
+            }
+            Application.Current.UserAppTheme = appTheme;
         }
     }
 }
