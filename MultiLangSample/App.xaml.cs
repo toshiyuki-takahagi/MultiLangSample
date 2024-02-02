@@ -18,6 +18,16 @@ namespace MultiLangSample
 
             MainPage = new AppShell();
         }
+        public void ChangeTheme(AppTheme appTheme)
+        {
+            // 現在のテーマ設定がシステムと同じでデフォルトに戻す場合は一度色を強制的に切り替える必要があるっぽい
+            if (appTheme == AppTheme.Unspecified && UserAppTheme == RequestedTheme)
+            {
+                // 一度システムと異なるモードにしてやらないとiOSはうまくいかないっぽい
+                UserAppTheme = RequestedTheme == AppTheme.Light ? AppTheme.Dark : AppTheme.Light;
+            }
+            UserAppTheme = appTheme;
+        }
 
     }
 }
