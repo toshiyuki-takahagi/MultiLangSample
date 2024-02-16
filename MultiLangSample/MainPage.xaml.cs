@@ -16,6 +16,8 @@ public partial class MainPage : ContentPage
         systemDefault = true;
         ColorPicker.SelectedIndex = 0; // 初期値はシステムデフォルト
 
+        CurrentCultureText.Text = $"CurentCulture={CultureInfo.CurrentCulture.Name}";
+        CurrentUICultureText.Text = $"CurentCulture={CultureInfo.CurrentUICulture.Name}";
     }
 
     private void OnCounterClicked(object sender, EventArgs e)

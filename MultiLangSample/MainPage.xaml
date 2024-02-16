@@ -25,6 +25,10 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
+            <Label x:Name="CurrentCultureText" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+            <Label x:Name="CurrentUICultureText" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+
+
             <Button
                 x:Name="CounterBtn"
                 Text="{x:Static properties:Resources.MainPage_ButtonFace_Default}"
